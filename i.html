@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cybersecurity Awareness Quiz</title>
+  <script src="quiz.js" defer></script> <!-- Include your JavaScript file -->
+  <style>
+    /* Reset default margin and padding */
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Quiz container */
+#quiz-container {
+  background-color: #bde2fc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Question style */
+#quiz-container h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Answer options */
+form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Submit button */
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #1E90FF;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0066cc;
+}
+
+
+  </style>
+  <link rel="stylesheet" href="https://embed.pickaxeproject.com/axe/scripts/inline-button/styles.css">
+</head>
+<body>
+    <div id="pickaxe-inline-action-btn"data-formid="Teacher_Bot_MSQF0" data-frame-source="https://embed.pickaxeproject.com/axe?id=Teacher_Bot_MSQF0&mode=embed_gold&host=beta&theme=light&opacity=100&font_header=Real+Head+Pro&size_header=30&font_body=Real+Head+Pro&size_body=16&font_labels=Real+Head+Pro&size_labels=14&font_button=Real+Head+Pro&size_button=16&c_fb=FFFFFF&c_ff=FFFFFF&c_fbd=888888&c_bb=228DD7&c_bt=FFFFFF&c_t=000000&s_ffo=100&s_bbo=100&s_f=minimalist&s_b=filled&s_t=2&s_r=2" data-title="Teacher Bot" data-btn-color="228DD7" data-btn-style="filled" data-border-radius="2" data-border-width="2" data-font-color="FFFFFF"></div>
+  <h1 style="font-size: 56px; color: #0066cc;"><b>Cybersecurity Awareness Quiz</b></h1>
+  <div id="quiz-container"></div>
+  <script src="https://embed.pickaxeproject.com/axe/scripts/inline-button/bundle.js"></script>
+  <script>
+    // Array of 15 cybersecurity questions and answers
+    const cyberSecurityQuestions = [
+  {
+    question: 'What is phishing?',
+    answers: ['A type of cyberattack', 'A type of fishing', 'A type of computer virus'],
+    correctAnswer: 'A type of cyberattack'
+  },
+  {
+    question: 'What is the most common password?',
+    answers: ['123456', 'password', 'qwerty'],
+    correctAnswer: '123456'
+  },
+  {
+    question: 'What does VPN stand for?',
+    answers: ['Virtual Personal Network', 'Virtual Private Network', 'Visual Private Network'],
+    correctAnswer: 'Virtual Private Network'
+  },
+  {
+    question: 'What is malware?',
+    answers: ['Hardware issue', 'Software designed to damage or gain unauthorized access', 'A computer program'],
+    correctAnswer: 'Software designed to damage or gain unauthorized access'
+  },
+  {
+    question: 'What is the purpose of a firewall?',
+    answers: ['To prevent unauthorized access', 'To clean the computer', 'To increase internet speed'],
+    correctAnswer: 'To prevent unauthorized access'
+  },
+  {
+    question: 'What is two-factor authentication?',
+    answers: ['Using two passwords', 'Two methods to verify identity', 'A way to delete accounts'],
+    correctAnswer: 'Two methods to verify identity'
+  },
+  {
+    question: 'What does SSL/TLS do?',
+    answers: ['Improves internet speed', 'Encrypts data sent over the internet', 'Blocks hackers'],
+    correctAnswer: 'Encrypts data sent over the internet'
+  },
+  {
+    question: 'What is a brute force attack?',
+    answers: ['A physical attack', 'An attempt to guess passwords', 'A type of virus'],
+    correctAnswer: 'An attempt to guess passwords'
+  },
+  {
+    question: 'What does a phishing email usually contain?',
+    answers: ['Links to download files', 'Requests for personal information', 'Advertising messages'],
+    correctAnswer: 'Requests for personal information'
+  },
+  {
+    question: 'What is the best practice for creating a secure password?',
+    answers: ['Using personal information', 'Using dictionary words', 'Using a combination of letters, numbers, and symbols'],
+    correctAnswer: 'Using a combination of letters, numbers, and symbols'
+  },
+  {
+    question: 'What does a strong password consist of?',
+    answers: ['Short and simple', 'Easily guessable', 'Long and complex'],
+    correctAnswer: 'Long and complex'
+  },
+  {
+    question: 'What does encryption do?',
+    answers: ['Hides the internet connection', 'Scrambles data to make it unreadable', 'Creates a virtual private network'],
+    correctAnswer: 'Scrambles data to make it unreadable'
+  },
+  {
+    question: 'What is a data breach?',
+    answers: ['An intentional loss of data', 'An accidental release of information', 'Unauthorized access to sensitive data'],
+    correctAnswer: 'Unauthorized access to sensitive data'
+  },
+  {
+    question: 'What is a keylogger?',
+    answers: ['A hardware device', 'A type of password', 'A program that records keystrokes'],
+    correctAnswer: 'A program that records keystrokes'
+  },
+  {
+    question: 'What is the primary purpose of antivirus software?',
+    answers: ['To speed up the computer', 'To prevent unauthorized access', 'To detect and remove malware'],
+    correctAnswer: 'To detect and remove malware'
+  }
+];
+
+
+// Function to generate a random quiz
+function generateQuiz() {
+  const quizContainer = document.getElementById('quiz-container');
+  let score = 0;
+
+  // Shuffle questions randomly
+  const shuffledQuestions = cyberSecurityQuestions.sort(() => Math.random() - 0.5);
+
+  // Display 5 random questions from the shuffled array
+  for (let i = 0; i < 5; i++) {
+    const questionDiv = document.createElement('div');
+    const currentQuestion = shuffledQuestions[i];
+
+    questionDiv.innerHTML = `
+      <h3>${currentQuestion.question}</h3>
+      <form id="question${i}">
+        ${currentQuestion.answers.map(answer => `
+          <input type="radio" name="question${i}" value="${answer}">
+          <label>${answer}</label><br>
+        `).join('')}
+      </form>
+    `;
+    quizContainer.appendChild(questionDiv);
+  }
+
+  // Add a submit button
+  const submitButton = document.createElement('button');
+  submitButton.textContent = 'Submit Quiz';
+  submitButton.addEventListener('click', () => {
+    for (let i = 0; i < 5; i++) {
+      const selectedAnswer = document.querySelector(`input[name="question${i}"]:checked`);
+      if (selectedAnswer && selectedAnswer.value === shuffledQuestions[i].correctAnswer) {
+        score++;
+      }
+    }
+    if (score === 5) {
+      alert('Congratulations! You passed the quiz!');
+      // window.location.href = 'nextPage.html'; // Redirect to the next page on passing
+    } else {
+      alert(`Your score is ${score} out of 5. Please try again.`);
+    }
+  });
+  quizContainer.appendChild(submitButton);
+}
+
+// Generate the quiz when the page loads
+window.addEventListener('load', generateQuiz);
+
+  </script>
+</body>
+</html>
