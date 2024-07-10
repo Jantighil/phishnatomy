@@ -1,0 +1,88 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+} */
+h1 {
+    color: #333;
+    text-align: center;
+}
+form {
+    margin: 20px 0;
+}
+.textarea-container {
+    position: relative;
+    width: 80%;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+.upload-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #007bff;
+}
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 20px 0;
+}
+
+#result {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    max-height: 180px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 80%;
+   
+}
+#result p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: black;
+}
+#result ul {
+    margin-top: 0;
+    padding-left: 20px;
+}
+#result li {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: black;
+}
+#result strong {
+    color: #d9534f;
+}
+.legitimate {
+    color: green;
+}
+.phishing {
+    color: red;
+}
